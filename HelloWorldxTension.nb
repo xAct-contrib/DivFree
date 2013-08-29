@@ -1,0 +1,857 @@
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["HelloWorldxTension",
+ FontSlant->"Italic",
+ FontColor->RGBColor[1, 0, 0]]], "Title"],
+
+Cell[TextData[StyleBox["Trivial xTension example",
+ FontColor->RGBColor[0, 0, 1]]], "Subtitle"],
+
+Cell[TextData[{
+ StyleBox["Leo C. Stein",
+  FontSize->18],
+ "   leo.stein@gmail.com\n\n(c) 2013 under GPL\n\nhttp://www.xAct.es/\n\
+http://groups.google.com/group/xAct"
+}], "Subsubtitle"],
+
+Cell[TextData[{
+ StyleBox["HelloWorldxTension",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0, 0]],
+ " is a package to demonstrate using xTension.\n\n",
+ StyleBox["HelloWorldxTension",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0, 0]],
+ " is distributed under the GNU General Public License, and runs on top of ",
+ StyleBox["xTensor",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ", a free package for fast manipulation of abstract tensor expressions. Both \
+can be downloaded from ",
+ StyleBox["http://www.xAct.es/",
+  FontWeight->"Bold"]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateList", "[", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2013", ",", "8", ",", "28", ",", "21", ",", "23", ",", 
+   "13.927095`7.896435523643323"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xAct`HelloWorldxTension`$xTensorVersionExpected", "=", 
+   RowBox[{"{", 
+    RowBox[{"\"\<1.0.5\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"xAct`HelloWorldxTension`$Version", "=", 
+  RowBox[{"{", 
+   RowBox[{"\"\<0.1.0\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"2013", ",", "08", ",", "28"}], "}"}]}], "}"}]}]}], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"0.1.0\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "8", ",", "28"}], "}"}]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "1. ",
+ StyleBox["Initialization",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell["1.0. TODO list", "Subsubsection"],
+
+Cell["Nothing right now.", "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["1.1. GPL", "Subsubsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"HelloWorldxTension", ":", " ", 
+    RowBox[{"Trivial", " ", "xTension", " ", "example"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Copyright", " ", 
+    RowBox[{"(", "C", ")"}], " ", "2013", " ", "Leo", " ", 
+    RowBox[{"C", ".", " ", "Stein"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "This", " ", "program", " ", "is", " ", "free", " ", "software"}], ";", 
+     " ", 
+     RowBox[{"you", " ", "can", " ", "redistribute", " ", "it", " ", 
+      RowBox[{"and", "/", "or"}], " ", "modify", " ", "it", " ", "under", " ",
+       "the", " ", "terms", " ", "of", " ", "the", " ", "GNU", " ", "General",
+       " ", "Public", " ", "License", " ", "as", " ", "published", " ", "by", 
+      " ", "the", " ", "Free", " ", "Software", " ", "Foundation"}], ";", " ", 
+     RowBox[{
+     "either", " ", "version", " ", "2", " ", "of", " ", "the", " ", 
+      "License"}]}], ",", 
+    RowBox[{"or", " ", 
+     RowBox[{"(", 
+      RowBox[{"at", " ", "your", " ", "option"}], ")"}], " ", "any", " ", 
+     "later", " ", 
+     RowBox[{
+     "version", ".", "\[IndentingNewLine]", "\[IndentingNewLine]", "This"}], 
+     " ", "program", " ", "is", " ", "distributed", " ", "in", " ", "the", 
+     " ", "hope", " ", "that", " ", "it", " ", "will", " ", "be", " ", 
+     "useful"}], ",", " ", 
+    RowBox[{
+     RowBox[{"but", " ", "WITHOUT", " ", "ANY", " ", "WARRANTY"}], ";", " ", 
+     RowBox[{
+     "without", " ", "even", " ", "the", " ", "implied", " ", "warranty", " ",
+       "of", " ", "MERCHANTABILITY", " ", "or", " ", "FITNESS", " ", "FOR", 
+      " ", "A", " ", "PARTICULAR", " ", 
+      RowBox[{"PURPOSE", ".", " ", "See"}], " ", "the", " ", "GNU", " ", 
+      "General", " ", "Public", " ", "License", " ", "for", " ", "more", " ", 
+      
+      RowBox[{
+      "details", ".", "\[IndentingNewLine]", "\[IndentingNewLine]", "You"}], 
+      " ", "should", " ", "have", " ", "received", " ", "a", " ", "copy", " ",
+       "of", " ", "the", " ", "GNU", " ", "General", " ", "Public", " ", 
+      "License", " ", "along", " ", "with", " ", "this", " ", "program"}], 
+     ";", " ", 
+     RowBox[{"if", " ", "not"}]}], ",", " ", 
+    RowBox[{
+    "write", " ", "to", " ", "the", " ", "Free", " ", "Software", " ", 
+     "Foundation"}], ",", " ", 
+    RowBox[{"Inc", "."}], ",", " ", 
+    RowBox[{
+     RowBox[{"59", " ", "Temple", " ", "Place"}], "-", 
+     RowBox[{"Suite", " ", "330"}]}], ",", " ", "Boston", ",", " ", 
+    RowBox[{
+     RowBox[{"MA", " ", "02111"}], "-", "1307"}], ",", " ", 
+    RowBox[{"USA", "."}]}], " ", "\[IndentingNewLine]", "*)"}]}]], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["1.2. Info package", "Subsubsection"],
+
+Cell["\<\
+(* :Title: HelloWorldxTension *)
+
+(* :Author: Leo C. Stein *)
+
+(* :Summary: Add an xTension to print a message
+    whenever a tensor is defined *)
+
+(* :Brief Discussion: *)
+  
+(* :Context: xAct`HelloWorldxTension` *)
+
+(* :Package Version: 0.1.0 *)
+
+(* :Copyright: Leo C. Stein (2013) *)
+
+(* :History: TODO *)
+
+(* :Keywords: TODO *)
+
+(* :Source: HelloWorldxTension.nb *)
+
+(* :Warning: TODO *)
+
+(* :Mathematica Version: 8.0 and later *)
+
+(* :Limitations: *)
+\t
+(* :Acknowledgements: *)\
+\>", "Input",
+ PageWidth->PaperWidth,
+ CellMargins->{{60, -272}, {Inherited, Inherited}},
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["1.3. BeginPackage", "Subsubsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Unevaluated", "[", "xAct`xCore`Private`$LastPackage", "]"}], "===",
+      "xAct`xCore`Private`$LastPackage"}], ",", 
+    RowBox[{
+    "xAct`xCore`Private`$LastPackage", "=", 
+     "\"\<xAct`HelloWorldxTension`\>\""}]}], "]"}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["xAct`xCore`Private`$LastPackage"], "Input"],
+
+Cell[BoxData["\<\"xAct`HelloWorldxTension`\"\>"], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Explicit (not hidden) import of ",
+ StyleBox["xTensor",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ", ",
+ StyleBox["xPerm",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " and ",
+ StyleBox["xCore",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ":"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BeginPackage", "[", 
+  RowBox[{"\"\<xAct`HelloWorldxTension`\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<xAct`xTensor`\>\"", ",", "\"\<xAct`xPerm`\>\"", ",", 
+     "\"\<xAct`xCore`\>\""}], "}"}]}], "]"}]], "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.0", ", ", {2013, 1, 27}],
+  
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2013, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connecting to external mac executable...\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.5\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTensor`  version ", "1.0.5", ", ", {2013, 1, 27}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2013, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"]
+}, Open  ]],
+
+Cell[BoxData["\<\"xAct`HelloWorldxTension`\"\>"], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"Not", "@", 
+    RowBox[{"OrderedQ", "@", 
+     RowBox[{"Map", "[", 
+      RowBox[{"Last", ",", 
+       RowBox[{"{", 
+        RowBox[{"$xTensorVersionExpected", ",", "xAct`xTensor`$Version"}], 
+        "}"}]}], "]"}]}]}], ",", 
+   RowBox[{"Throw", "@", 
+    RowBox[{"Message", "[", 
+     RowBox[{
+      RowBox[{"General", "::", "versions"}], ",", "\"\<xTensor\>\"", ",", 
+      "xAct`xTensor`$Version", ",", "$xTensorVersionExpected"}], "]"}]}]}], 
+  "]"}]], "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Print", "[", "xAct`xCore`Private`bars", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Package xAct`HelloWorldxTension`  version \>\"", ",", 
+    RowBox[{"$Version", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], ",", "\"\<, \>\"", ",", 
+    RowBox[{"$Version", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+  "Print", "[", 
+   "\"\<Copyright (C) 2013, Leo C. Stein, under the General Public License.\>\
+\"", "]"}], ";"}]}], "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`HelloWorldxTension`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.1.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "8", ",", "28"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`HelloWorldxTension`  version ", "0.1.0", ", ", {2013, 8, 28}],
+  
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"Copyright (C) 2013, Leo C. Stein, under the General Public \
+License.\"\>"], "Print"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+We specify the context xAct`HelloWorldxTension` to avoid overriding the \
+Disclaimer of the other packages. However we need to turn off the message \
+General:shdw temporarily:\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"Off", "[", 
+  RowBox[{"General", "::", "shdw"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xAct`xForm`Disclaimer", "[", "]"}], ":=", 
+  RowBox[{
+  "Print", "[", 
+   "\"\<These are points 11 and 12 of the General Public \
+License:\\n\\nBECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO \
+WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT \
+WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES \
+PROVIDE THE PROGRAM `AS IS\.b4 WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED \
+OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF \
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO \
+THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM \
+PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR \
+CORRECTION.\\n\\nIN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO \
+IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY \
+AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR \
+DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES \
+ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT \
+LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED \
+BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER \
+PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE \
+POSSIBILITY OF SUCH DAMAGES.\>\"", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"On", "[", 
+  RowBox[{"General", "::", "shdw"}], "]"}]}], "Input",
+ InitializationCell->True],
+
+Cell[TextData[{
+ "If ",
+ StyleBox["HelloWorldxTension",
+  FontSlant->"Italic"],
+ " is not being called from other package then write this GPL short \
+disclaimer:"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{
+   "xAct`xCore`Private`$LastPackage", "===", 
+    "\"\<xAct`HelloWorldxTension`\>\""}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Unset", "[", "xAct`xCore`Private`$LastPackage", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", "xAct`xCore`Private`bars", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+    "Print", "[", 
+     "\"\<These packages come with ABSOLUTELY NO WARRANTY; for details type \
+Disclaimer[]. This is free software, and you are welcome to redistribute it \
+under certain conditions. See the General Public License for details.\>\"", 
+     "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", "xAct`xCore`Private`bars", "]"}]}]}], 
+  "]"}]], "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Note that symbols in the Global` context cannot be accessed right now.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ContextPath"], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"xAct`HelloWorldxTension`\"\>", ",", "\<\"xAct`xTensor`\"\>", 
+   ",", "\<\"xAct`xPerm`\"\>", ",", "\<\"xAct`xCore`\"\>", 
+   ",", "\<\"System`\"\>"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Context"], "Input"],
+
+Cell[BoxData["\<\"xAct`HelloWorldxTension`\"\>"], "Output"]
+}, Open  ]],
+
+Cell["Established connection to external executable?", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$xpermQ"], "Input"],
+
+Cell[BoxData["True"], "Output"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["1.4. Non-standard setup", "Subsubsection"],
+
+Cell["\<\
+Here you would do things like:
+Screen all dollar indices: (Currently deactivated)\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$PrePrint", "=", "ScreenDollarIndices"}], ";"}]], "Input",
+ Evaluatable->False]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["1.5. Usage messages", "Subsubsection"],
+
+Cell["\<\
+Here we declare the usage messages. This also creates the variables in the \
+public scope.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"HelloMessage", "::", "usage"}], "=", 
+   "\"\<HelloMessage is an option for DefTensor for an extra message to print \
+at the time of definition.\>\""}], ";"}]], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["1.6. Begin private", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData["\<\"xAct`HelloWorldxTension`Private`\"\>"], "Output"]
+}, Open  ]],
+
+Cell["The reserved words in version 0.1.0 :", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "[", "\"\<xAct`HelloWorldxTension`*\>\"", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"HelloMessage\"\>", ",", "\<\"$Version\"\>", 
+   ",", "\<\"$xTensorVersionExpected\"\>"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"%", "//", "Length"}]], "Input"],
+
+Cell[BoxData["3"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ContextPath"], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"xAct`HelloWorldxTension`\"\>", ",", "\<\"xAct`xTensor`\"\>", 
+   ",", "\<\"xAct`xPerm`\"\>", ",", "\<\"xAct`xCore`\"\>", 
+   ",", "\<\"System`\"\>"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Context"], "Input"],
+
+Cell[BoxData["\<\"xAct`HelloWorldxTension`Private`\"\>"], "Output"]
+}, Open  ]],
+
+Cell["Now this is not being used. Deactivated cell :", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"BeginExamples", "[", "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Set", "[", 
+     RowBox[{"$Context", ",", "\"\<Global`\>\""}], "]"}], ";", 
+    RowBox[{"Global`symbols", "=", 
+     RowBox[{"Names", "[", "\"\<Global`*\>\"", "]"}]}], ";", "Null"}], 
+   ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Global`EndExamples", "[", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"#", "=!=", 
+         RowBox[{"{", "}"}]}], ",", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<There are new symbols in Global`:\>\"", ",", "#"}], 
+         "]"}]}], "]"}], ";", 
+      RowBox[{"Set", "[", 
+       RowBox[{"$Context", ",", "\"\<xAct`xForm`Private`\>\""}], "]"}], ";", 
+      "Null"}], ")"}], "&"}], "@", 
+   RowBox[{"Complement", "[", 
+    RowBox[{
+     RowBox[{"Names", "[", "\"\<Global`*\>\"", "]"}], ",", "Global`symbols"}],
+     "]"}]}]}]}], "Input",
+ Evaluatable->False]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Main code", "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell["\<\
+Generally there would be more sections, but we only have one.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+   "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**",
+     "**"}], "*", " ", "2.", " ", "Main", " ", "code", " ", "for", " ", 
+   "HelloWorldxTension"}], " ", "*****************************)"}]], "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["2.1 Modify the Options list for DefTensor", "Subsubsection"],
+
+Cell["\<\
+Add HelloMessage to the list of Options, if it\[CloseCurlyQuote]s not already \
+there\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"FreeQ", "[", 
+     RowBox[{
+      RowBox[{"First", "/@", 
+       RowBox[{"Options", "[", "DefTensor", "]"}]}], ",", "HelloMessage"}], 
+     "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Unprotect", "[", "DefTensor", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Options", "[", "DefTensor", "]"}], "=", 
+      RowBox[{"Append", "[", 
+       RowBox[{
+        RowBox[{"Options", "[", "DefTensor", "]"}], ",", 
+        RowBox[{"HelloMessage", "\[Rule]", "\"\<Hello, world!\>\""}]}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Protect", "[", "DefTensor", "]"}], ";"}]}], "]"}], 
+  ";"}]], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["2.2 The hooks (functions) themselves", "Subsubsection"],
+
+Cell["\<\
+The functions will be called with the same arguments as DefTensor. This \
+decides the interface for our hooks.
+Note: These functions are in our private scope, so there\[CloseCurlyQuote]s \
+no danger of them colliding with others named similarly.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "This", " ", "would", " ", "be", " ", "the", " ", "place", " ", "to", " ",
+      "check", " ", "the", " ", "input"}], ",", " ", 
+    RowBox[{
+    "but", " ", "we", " ", "have", " ", "nothing", " ", "to", " ", 
+     "check"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"DefTensorBeginning", "[", 
+      RowBox[{
+       RowBox[{"head_", "[", "indices___", "]"}], ",", "dependencies_", ",", 
+       "sym_", ",", "options___"}], "]"}], ":=", "Null"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Here", " ", "we", " ", "do", " ", "the", " ", "actual", " ", "work"}], 
+    " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"DefTensorBeginning", "[", 
+      RowBox[{
+       RowBox[{"head_", "[", "indices___", "]"}], ",", "dependencies_", ",", 
+       "sym_", ",", "options___"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"theMessage", "=", 
+         RowBox[{"OptionValue", "[", 
+          RowBox[{"DefTensor", ",", 
+           RowBox[{"{", "options", "}"}], ",", "HelloMessage"}], "]"}]}], 
+        "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Print", "[", "theMessage", "]"}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}]}]}]], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["2.3 Registering our hooks", "Subsubsection"],
+
+Cell["Here we let the xTension system know about our functions.", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"xTension", "[", 
+    RowBox[{
+    "\"\<HelloWorldxTension`\>\"", ",", "DefTensor", ",", 
+     "\"\<Beginning\>\""}], "]"}], "=", "DefTensorBeginning"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"xTension", "[", 
+    RowBox[{
+    "\"\<HelloWorldxTension`\>\"", ",", "DefTensor", ",", "\"\<End\>\""}], 
+    "]"}], "=", "DefTensorEnd"}], ";"}]}], "Input",
+ InitializationCell->True]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3. End private and package", "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Protect", "[", "HelloMessage", "]"}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EndPackage", "[", "]"}], ";"}]}], "Input",
+ InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4. Examples", "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell["The user context is empty :", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Global`*"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Information", "::", "nomatch"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"No symbol matching \[NoBreak]\\!\\(\\\"Global`*\\\"\\)\
+\[NoBreak] found. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Information/nomatch\\\", ButtonNote -> \
+\\\"Information::nomatch\\\"]\\)\"\>"}]], "Message", "MSG"]
+}, Open  ]],
+
+Cell["Define a manifold", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DefManifold", "[", 
+  RowBox[{"M4", ",", "4", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d"}], "}"}]}], "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefManifold", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"manifold \"\>", "\[InvisibleSpace]", "M4", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefManifold, ": Defining ", 
+   "manifold ", $CellContext`M4, ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefVBundle", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"vbundle \"\>", "\[InvisibleSpace]", "TangentM4", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefVBundle, ": Defining ", 
+   "vbundle ", $CellContext`TangentM4, ". ", ""],
+  Editable->False]], "Print"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Define a tensor with the default HelloMessage", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"w", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", "M4"}], "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   RowBox[{"w", "[", 
+    RowBox[{"-", "a"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+   $CellContext`w[-$CellContext`a], ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"Hello, world!\"\>"], "Print"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Define a tensor with a custom HelloMessage", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"v", "[", "a", "]"}], ",", "M4", ",", 
+   RowBox[{"HelloMessage", "\[Rule]", "\"\<Isn't this fun?\>\""}]}], 
+  "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   RowBox[{"v", "[", "a", "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+   $CellContext`v[$CellContext`a], ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"Isn't this fun?\"\>"], "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowToolbars->{},
+WindowSize->{1440, 852},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Visible->True,
+PrivateNotebookOptions->{"FileOutlineCache"->False,
+"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+TrackCellChangeTimes->False,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+
