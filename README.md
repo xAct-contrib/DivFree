@@ -2,7 +2,7 @@ DivFree
 =======
 
 DivFree is a simple xTension package for xAct.
-It is forked from HelloWorldxTension as an example
+It is forked from [HelloWorldxTension](https://github.com/xAct-contrib/HelloWorldxTension) as an example
 of what needs to be changed to create a new package.
 This package serves as an example for the framework
 needed to create a package, and how to use xTension
