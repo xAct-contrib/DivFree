@@ -663,7 +663,7 @@ Cell[BoxData[
     " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
-     RowBox[{"DefTensorBeginning", "[", 
+     RowBox[{"DefTensorEnd", "[", 
       RowBox[{
        RowBox[{"head_", "[", "indices___", "]"}], ",", "dependencies_", ",", 
        "sym_", ",", "options___"}], "]"}], ":=", 
