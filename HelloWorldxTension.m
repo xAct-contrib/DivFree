@@ -109,7 +109,7 @@ Protect[DefTensor];];
 (* This would be the place to check the input, but we have nothing to check *)
 DefTensorBeginning[head_[indices___],dependencies_,sym_,options___]:=Null;
 (* Here we do the actual work *)
-DefTensorBeginning[head_[indices___],dependencies_,sym_,options___]:=Module[{theMessage=OptionValue[DefTensor,{options},HelloMessage]},
+DefTensorEnd[head_[indices___],dependencies_,sym_,options___]:=Module[{theMessage=OptionValue[DefTensor,{options},HelloMessage]},
 Print[theMessage];
 ];
 
