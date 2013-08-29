@@ -1,7 +1,9 @@
-HelloWorldxTension
-==================
+DivFree
+=======
 
-HelloWorldxTension is a trivial package for xAct.
+DivFree is a simple xTension package for xAct.
+It is forked from HelloWorldxTension as an example
+of what needs to be changed to create a new package.
 This package serves as an example for the framework
 needed to create a package, and how to use xTension
 to extend the capabilities of xAct.
@@ -14,11 +16,11 @@ The directory tree should look like this:
 ```
 xAct
 |-- ...
-|-- HelloWorldxTension
+|-- DivFree
 |   |-- Kernel
 |   |   +-- init.m
-|   |-- HelloWorldxTension.m
-|   |-- HelloWorldxTension.nb
+|   |-- DivFree.m
+|   |-- DivFree.nb
 |   +-- README.md  (this file)
 |-- xTensor
 |-- ... (other xAct packages)

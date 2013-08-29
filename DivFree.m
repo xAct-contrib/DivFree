@@ -19,11 +19,11 @@
 
 
 
-xAct`HelloWorldxTension`$xTensorVersionExpected={"1.0.5",{2013,1,27}};
-xAct`HelloWorldxTension`$Version={"0.1.0",{2013,08,28}}
+xAct`DivFree`$xTensorVersionExpected={"1.0.5",{2013,1,27}};
+xAct`DivFree`$Version={"0.1.0",{2013,08,29}}
 
 
-(* HelloWorldxTension: Trivial xTension example *)
+(* DivFree: Make tensors divergence free at definition time *)
 
 (* Copyright (C) 2013 Leo C. Stein *)
 
@@ -35,16 +35,15 @@ You should have received a copy of the GNU General Public License along with thi
 *)
 
 
-(* :Title: HelloWorldxTension *)
+(* :Title: DivFree *)
 
 (* :Author: Leo C. Stein *)
 
-(* :Summary: Add an xTension to print a message
-    whenever a tensor is defined *)
+(* :Summary: Make tensors divergence free at definition time. *)
 
-(* :Brief Discussion: *)
+(* :Brief Discussion: DivFree is a package to demonstrate using xTension. It adds an option, DivFree, to DefTensor to declare a tensor divergence-free at the time of definition. *)
   
-(* :Context: xAct`HelloWorldxTension` *)
+(* :Context: xAct`DivFree` *)
 
 (* :Package Version: 0.1.0 *)
 
@@ -54,7 +53,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 (* :Keywords: TODO *)
 
-(* :Source: HelloWorldxTension.nb *)
+(* :Source: DivFree.nb *)
 
 (* :Warning: TODO *)
 
@@ -65,17 +64,17 @@ You should have received a copy of the GNU General Public License along with thi
 (* :Acknowledgements: *)
 
 
-If[Unevaluated[xAct`xCore`Private`$LastPackage]===xAct`xCore`Private`$LastPackage,xAct`xCore`Private`$LastPackage="xAct`HelloWorldxTension`"];
+If[Unevaluated[xAct`xCore`Private`$LastPackage]===xAct`xCore`Private`$LastPackage,xAct`xCore`Private`$LastPackage="xAct`DivFree`"];
 
 
-BeginPackage["xAct`HelloWorldxTension`",{"xAct`xTensor`","xAct`xPerm`","xAct`xCore`"}]
+BeginPackage["xAct`DivFree`",{"xAct`xTensor`","xAct`xPerm`","xAct`xCore`"}]
 
 
 If[Not@OrderedQ@Map[Last,{$xTensorVersionExpected,xAct`xTensor`$Version}],Throw@Message[General::versions,"xTensor",xAct`xTensor`$Version,$xTensorVersionExpected]]
 
 
 Print[xAct`xCore`Private`bars]
-Print["Package xAct`HelloWorldxTension`  version ",$Version[[1]],", ",$Version[[2]]];
+Print["Package xAct`DivFree`  version ",$Version[[1]],", ",$Version[[2]]];
 Print["Copyright (C) 2013, Leo C. Stein, under the General Public License."];
 
 
@@ -84,41 +83,63 @@ xAct`xForm`Disclaimer[]:=Print["These are points 11 and 12 of the General Public
 On[General::shdw]
 
 
-If[xAct`xCore`Private`$LastPackage==="xAct`HelloWorldxTension`",
+If[xAct`xCore`Private`$LastPackage==="xAct`DivFree`",
 Unset[xAct`xCore`Private`$LastPackage];
 Print[xAct`xCore`Private`bars];
 Print["These packages come with ABSOLUTELY NO WARRANTY; for details type Disclaimer[]. This is free software, and you are welcome to redistribute it under certain conditions. See the General Public License for details."];
 Print[xAct`xCore`Private`bars]]
 
 
-HelloMessage::usage="HelloMessage is an option for DefTensor for an extra message to print at the time of definition.";
+DivFree::usage="DivFree is an option for DefTensor to declare a tensor divergence free. Use DivFree->{covd[-a],...} to declare that the tensor is divergence free on index +a with respect to the covariant derivative covd.";
 
 
 Begin["`Private`"]
 
 
-(****************************** 2. Main code for HelloWorldxTension *****************************)
+(****************************** 2. Main code for DivFree *****************************)
 
 
-If[FreeQ[First/@Options[DefTensor],HelloMessage],
+If[FreeQ[First/@Options[DefTensor],DivFree],
 Unprotect[DefTensor];
-Options[DefTensor]=Append[Options[DefTensor],HelloMessage->"Hello, world!"];
+Options[DefTensor]=Append[Options[DefTensor],DivFree->{}];
 Protect[DefTensor];];
 
 
-(* This would be the place to check the input, but we have nothing to check *)
-DefTensorBeginning[head_[indices___],dependencies_,sym_,options___]:=Null;
+DefTensor::BadDivFreeIndices="Indices supplied to DivFree (`1`) do not all appear with opposite character in indices of tensor (`2`).";
+
+
+CheckDivFree[tensor_[inds___],df:{_?CovDQ[_]...}]:=Module[{dfinds=Union[First/@df]},
+With[{changedfinds=ChangeIndex/@dfinds},
+(* Every index in changedfinds must be in inds *)
+If[Intersection[{inds},changedfinds]=!=changedfinds,
+Throw@Message[DefTensor::BadDivFreeIndices,dfinds,{inds}];
+];
+];
+];
+CheckDivFree[_,df_]:=Throw@Message[DefTensor::invalid,df,"format for DivFree"];
+
+
+(* Check the input *)
+DefTensorBeginning[head_[indices___],dependencies_,sym_,options___]:=Module[{df=OptionValue[DefTensor,{options},DivFree]},
+CheckDivFree[head[indices],df];
+];
 (* Here we do the actual work *)
-DefTensorEnd[head_[indices___],dependencies_,sym_,options___]:=Module[{theMessage=OptionValue[DefTensor,{options},HelloMessage]},
-Print[theMessage];
+DefTensorEnd[head_[indices___],dependencies_,sym_,options___]:=Module[{df=OptionValue[DefTensor,{options},DivFree]},
+With[{rules=Flatten[MakeRule[{Evaluate[#[head[indices]]],0}]&/@df]},
+If[$DefInfoQ&&Length[rules]>0,
+Print["Generated rules:"];
+Print[rules];
+];
+AutomaticRules[head,rules];
+];
 ];
 
 
-xTension["HelloWorldxTension`",DefTensor,"Beginning"]=DefTensorBeginning;
-xTension["HelloWorldxTension`",DefTensor,"End"]=DefTensorEnd;
+xTension["DivFree`",DefTensor,"Beginning"]=DefTensorBeginning;
+xTension["DivFree`",DefTensor,"End"]=DefTensorEnd;
 
 
-Protect[HelloMessage];
+Protect[DivFree];
 
 
 End[];
